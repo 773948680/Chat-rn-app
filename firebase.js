@@ -33,5 +33,3 @@ const auth = getAuth(app);
 
 export { db, auth };
 
-// git config --global user.email "alalpha394@gmail.com"
-// git config --global user.name "Alpha"

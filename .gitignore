@@ -13,3 +13,5 @@ web-build/
 # macOS
 .DS_Store
 .env
+// git config --global user.email "alalpha394@gmail.com"
+// git config --global user.name "Alpha"

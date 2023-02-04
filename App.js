@@ -1,25 +1,22 @@
 import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { NavigationContainer } from '@react-navigation/native';
 import React from "react";
-import { faMugSaucer } from "@fortawesome/free-solid-svg-icons/faMugSaucer";
+import LoginScreen from "./screens/LoginScreen";
+import ChatScreen from "./screens/ChatScreen";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RegistrationScreen from "./screens/RegistrationScreen";
+
+const Stack = createNativeStackNavigator();
 const App = () => {
 return (
-<SafeAreaView style={styles.container}>
-<View>
-<Text>Yes Yes Yes</Text>
-<FontAwesomeIcon icon={faMugSaucer} />
-</View>
-</SafeAreaView>
+  <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Registreation" component={RegistrationScreen}/>
+        <Stack.Screen name="ChatScreen" component={ChatScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
 );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 export default App;
