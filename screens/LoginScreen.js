@@ -1,10 +1,30 @@
 import { Button, Input } from '@rneui/base';
+import { auth } from '../firebase';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 import {Pressable, View, Text, StyleSheet } from 'react-native'
 import React, { useState} from 'react';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginScreen = ({navigation}) => {
   const[email, setEmail] = useState("");
   const[password, setPassword] = useState("");
+  const signIn =()=>{
+   
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      console.log("signIn");
+      const user = userCredential.user;
+      console.log("signIn");
+      alert("Email:", user.email);
+      // ...
+    })
+    .catch((error) => {
+     // const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+  };
   return (
     <View style={styles.container}>
       <Input
@@ -25,9 +45,7 @@ const LoginScreen = ({navigation}) => {
       <View>
         <Button
           title="sign in"
-          onPress={() => {
-            console.log("Bouton clic");
-          }}
+          onPress= {signIn}
           style={styles.button}
         />
 

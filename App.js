@@ -13,7 +13,7 @@ return (
   <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Registreation" component={RegistrationScreen}/>
+        <Stack.Screen name="Registration" component={RegistrationScreen}/>
         <Stack.Screen name="ChatScreen" component={ChatScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
