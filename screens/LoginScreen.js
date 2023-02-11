@@ -15,6 +15,7 @@ const LoginScreen = ({navigation}) => {
       // Signed in 
       console.log("signIn");
       const user = userCredential.user;
+      navigation.replace("ChatScreen");
       console.log("signIn");
       alert("Email:", user.email);
       // ...
